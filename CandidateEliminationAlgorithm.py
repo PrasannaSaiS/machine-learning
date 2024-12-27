@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[4]:
-
 
 import numpy as np
 import pandas as pd
@@ -10,16 +5,11 @@ data=pd.DataFrame(data= pd.read_csv('Documents/enjoysport.csv'))
 print(data)
 
 
-# In[5]:
-
 
 concept=np.array(data.iloc[:,0:-1])
 target=np.array(data.iloc[:,-1])
 print(target)
 print(concept)
-
-
-# In[17]:
 
 
 def learn(concepts,target):
@@ -51,6 +41,8 @@ def learn(concepts,target):
     for i in indices:
         general_h.remove(['?','?','?','?','?','?'])
     return specific_h, general_h
+
+
 
 s_final,g_final= learn(concept, target)
 print("\nFinal Specific_h: ", s_final, sep="\n")
